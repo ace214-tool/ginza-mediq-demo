@@ -1,0 +1,849 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="robots" content="noindex,nofollow,noarchive,nosnippet" />
+<meta name="googlebot" content="noindex,nofollow" />
+<title>【提案デモ】整体院LPサンプル｜株式会社Ace</title>
+<meta name="description" content="株式会社Ace 営業提案用デモページ（公開検索除外）" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;700;800&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet" />
+<style>
+:root {
+  --bg: #FAF7F2;
+  --bg-alt: #F1ECE2;
+  --ink: #2A2625;
+  --ink-soft: #5A524F;
+  --sage: #4A6B5D;
+  --sage-deep: #324B41;
+  --gold: #B5945C;
+  --terracotta: #B85450;
+  --line: #06C755;
+  --border: #E5DCC9;
+  --serif: 'Shippori Mincho', serif;
+  --sans: 'Noto Sans JP', sans-serif;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--sans);
+  color: var(--ink);
+  background: var(--bg);
+  line-height: 1.8;
+  font-size: 15px;
+  -webkit-font-smoothing: antialiased;
+}
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+
+/* DEMO BANNER */
+.demo-banner {
+  background: #B85450; color: #fff; padding: 10px 16px;
+  text-align: center; font-size: 12px; font-weight: 700;
+  letter-spacing: 0.1em; position: sticky; top: 0; z-index: 200;
+}
+.demo-banner small { font-weight: 400; opacity: 0.9; margin-left: 8px; }
+
+/* HEADER */
+.header {
+  position: sticky; top: 36px; z-index: 100;
+  background: rgba(250, 247, 242, 0.96);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border);
+}
+.header-inner {
+  max-width: 1100px; margin: 0 auto;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 14px 24px;
+}
+.logo {
+  font-family: var(--serif); font-weight: 700; font-size: 18px;
+  letter-spacing: 0.05em; color: var(--sage-deep);
+}
+.logo small { display: block; font-size: 10px; letter-spacing: 0.2em; color: var(--ink-soft); font-weight: 400; }
+.header-cta { display: flex; gap: 10px; align-items: center; }
+.tel-mini { font-family: var(--serif); font-weight: 700; color: var(--sage-deep); font-size: 16px; }
+.tel-mini small { display: block; font-size: 10px; color: var(--ink-soft); }
+.btn-line-mini {
+  background: var(--line); color: #fff; padding: 10px 18px; border-radius: 999px;
+  font-size: 13px; font-weight: 700; transition: transform .2s; cursor: pointer;
+}
+.btn-line-mini:hover { transform: translateY(-2px); }
+
+/* HERO */
+.hero {
+  position: relative; padding: 70px 24px 80px;
+  background: linear-gradient(180deg, var(--bg) 0%, var(--bg-alt) 100%);
+  overflow: hidden;
+}
+.hero::before {
+  content: ""; position: absolute; top: -100px; right: -100px;
+  width: 400px; height: 400px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(74, 107, 93, 0.08), transparent 70%);
+  pointer-events: none;
+}
+.hero::after {
+  content: ""; position: absolute; bottom: -80px; left: -80px;
+  width: 300px; height: 300px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(181, 148, 92, 0.06), transparent 70%);
+  pointer-events: none;
+}
+.hero-inner { max-width: 1100px; margin: 0 auto; text-align: center; position: relative; }
+.hero-tag {
+  display: inline-block; font-family: var(--serif); font-size: 13px; letter-spacing: 0.3em;
+  color: var(--sage-deep); padding: 6px 18px; border: 1px solid var(--sage);
+  border-radius: 2px; margin-bottom: 28px;
+}
+.hero-title {
+  font-family: var(--serif); font-weight: 700;
+  font-size: clamp(28px, 5vw, 46px);
+  line-height: 1.4; color: var(--ink); margin-bottom: 20px;
+}
+.hero-title em {
+  font-style: normal; color: var(--sage-deep);
+  background: linear-gradient(transparent 60%, rgba(181, 148, 92, 0.25) 60%);
+}
+.hero-sub {
+  font-size: 16px; color: var(--ink-soft); margin-bottom: 40px; line-height: 2;
+}
+.hero-stats {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;
+  max-width: 700px; margin: 0 auto 40px;
+}
+.stat {
+  background: #fff; padding: 24px 12px; border-radius: 4px;
+  border: 1px solid var(--border);
+  box-shadow: 0 4px 20px rgba(50, 75, 65, 0.04);
+}
+.stat-num {
+  font-family: var(--serif); font-weight: 800; font-size: clamp(28px, 4vw, 38px);
+  color: var(--sage-deep); display: block; line-height: 1;
+}
+.stat-num small { font-size: 0.5em; margin-left: 2px; }
+.stat-label { font-size: 11px; color: var(--ink-soft); margin-top: 8px; letter-spacing: 0.1em; }
+
+/* OFFER BANNER */
+.offer-banner {
+  background: linear-gradient(135deg, var(--sage-deep), var(--sage));
+  color: #fff; padding: 32px 24px; text-align: center; margin: 0;
+  position: relative;
+}
+.offer-tag {
+  display: inline-block; font-size: 12px; letter-spacing: 0.3em;
+  color: var(--gold); margin-bottom: 12px;
+}
+.offer-title {
+  font-family: var(--serif); font-weight: 700;
+  font-size: clamp(20px, 3vw, 28px); margin-bottom: 8px;
+}
+.offer-title strong { color: var(--gold); }
+.offer-deadline { font-size: 13px; opacity: 0.9; }
+
+/* CTA BLOCK */
+.cta-block {
+  background: var(--bg-alt); padding: 50px 24px; text-align: center;
+}
+.cta-inner { max-width: 700px; margin: 0 auto; }
+.cta-line {
+  display: inline-block; background: var(--line); color: #fff;
+  padding: 18px 50px; border-radius: 999px; font-size: 17px;
+  font-weight: 700; margin: 8px; min-width: 280px;
+  box-shadow: 0 6px 20px rgba(6, 199, 85, 0.3);
+  transition: transform .2s; cursor: pointer;
+}
+.cta-line:hover { transform: translateY(-3px); }
+.cta-line::before { content: "💬"; margin-right: 8px; }
+.cta-tel {
+  display: inline-block; padding: 18px 40px; border: 2px solid var(--sage-deep);
+  color: var(--sage-deep); border-radius: 999px; font-size: 17px;
+  font-weight: 700; font-family: var(--serif); margin: 8px; min-width: 280px;
+  background: #fff; cursor: pointer;
+}
+.cta-note { font-size: 12px; color: var(--ink-soft); margin-top: 16px; line-height: 1.7; }
+.refund-badge {
+  display: inline-block; background: var(--terracotta); color: #fff;
+  font-size: 11px; padding: 4px 12px; border-radius: 2px;
+  margin-top: 12px; letter-spacing: 0.1em; font-weight: 700;
+}
+
+/* SECTION COMMON */
+.section { padding: 80px 24px; }
+.section-inner { max-width: 1000px; margin: 0 auto; }
+.section-tag {
+  font-family: var(--serif); font-size: 12px; letter-spacing: 0.4em;
+  color: var(--gold); text-align: center; margin-bottom: 12px;
+}
+.section-title {
+  font-family: var(--serif); font-weight: 700;
+  font-size: clamp(22px, 3.2vw, 32px);
+  text-align: center; line-height: 1.5; margin-bottom: 50px;
+  color: var(--ink);
+}
+.section-title em {
+  font-style: normal; color: var(--sage-deep);
+  border-bottom: 2px solid var(--gold); padding-bottom: 4px;
+}
+
+.bg-checklist { background: #fff; }
+.checklist {
+  max-width: 720px; margin: 0 auto;
+  background: var(--bg-alt); padding: 40px 32px; border-radius: 4px;
+  border-left: 3px solid var(--sage);
+}
+.checklist li {
+  list-style: none; padding: 14px 0 14px 36px; position: relative;
+  border-bottom: 1px dashed var(--border); font-size: 15px;
+}
+.checklist li:last-child { border-bottom: none; }
+.checklist li::before {
+  content: "✓"; position: absolute; left: 4px; top: 14px;
+  width: 22px; height: 22px; border: 1px solid var(--sage);
+  color: var(--sage-deep); font-size: 13px; font-weight: 700;
+  display: flex; align-items: center; justify-content: center;
+  border-radius: 2px;
+}
+
+.empathy { background: var(--bg-alt); text-align: center; }
+.empathy-symptoms { display: flex; justify-content: center; gap: 24px; flex-wrap: wrap; margin: 30px 0 40px; }
+.symptom-card {
+  background: #fff; padding: 20px 24px; border-radius: 4px;
+  font-family: var(--serif); font-size: 15px; color: var(--sage-deep);
+  border: 1px solid var(--border);
+  box-shadow: 0 4px 16px rgba(50, 75, 65, 0.04);
+}
+.empathy-message {
+  font-family: var(--serif); font-size: clamp(20px, 2.8vw, 26px);
+  font-weight: 700; color: var(--ink); margin-bottom: 24px; line-height: 1.7;
+}
+.empathy-message strong { color: var(--terracotta); }
+.empathy-cause {
+  background: #fff; padding: 32px; border-radius: 4px; margin-top: 30px;
+  text-align: left; max-width: 720px; margin-left: auto; margin-right: auto;
+}
+.empathy-cause-title {
+  font-family: var(--serif); font-size: 18px; font-weight: 700;
+  color: var(--sage-deep); margin-bottom: 16px;
+}
+.empathy-cause ul { list-style: none; }
+.empathy-cause li {
+  padding: 8px 0 8px 24px; position: relative; font-size: 14px;
+}
+.empathy-cause li::before {
+  content: "→"; position: absolute; left: 0; color: var(--gold); font-weight: 700;
+}
+
+.reasons { background: #fff; }
+.reason-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+}
+.reason-card {
+  background: var(--bg); padding: 32px 24px; border-radius: 4px;
+  border-top: 3px solid var(--sage);
+  transition: transform .3s;
+}
+.reason-card:hover { transform: translateY(-4px); }
+.reason-num {
+  font-family: var(--serif); font-size: 14px; letter-spacing: 0.2em;
+  color: var(--gold); margin-bottom: 12px;
+}
+.reason-title {
+  font-family: var(--serif); font-weight: 700; font-size: 18px;
+  margin-bottom: 14px; color: var(--sage-deep); line-height: 1.5;
+}
+.reason-text { font-size: 13px; line-height: 1.9; color: var(--ink-soft); }
+
+.voices { background: var(--bg-alt); }
+.voice-card {
+  background: #fff; padding: 36px; margin-bottom: 28px; border-radius: 4px;
+  border-left: 3px solid var(--gold);
+}
+.voice-quote {
+  font-family: var(--serif); font-weight: 700; font-size: clamp(18px, 2.4vw, 22px);
+  color: var(--sage-deep); margin-bottom: 12px; line-height: 1.6;
+}
+.voice-meta {
+  font-size: 12px; color: var(--ink-soft); margin-bottom: 24px;
+  letter-spacing: 0.1em; padding-bottom: 12px; border-bottom: 1px solid var(--border);
+}
+.voice-qa { margin-top: 16px; }
+.voice-q {
+  font-family: var(--serif); font-weight: 700; font-size: 13px;
+  color: var(--sage-deep); margin-bottom: 6px;
+}
+.voice-a { font-size: 13px; line-height: 1.9; color: var(--ink); margin-bottom: 14px; padding-left: 16px; border-left: 2px solid var(--bg-alt); }
+
+.promises { background: #fff; }
+.promise-list {
+  max-width: 800px; margin: 0 auto;
+  display: flex; flex-direction: column; gap: 24px;
+}
+.promise-item {
+  display: grid; grid-template-columns: 80px 1fr; gap: 24px;
+  padding: 24px; background: var(--bg); border-radius: 4px;
+  align-items: start;
+}
+.promise-num {
+  font-family: var(--serif); font-weight: 800;
+  font-size: 36px; color: var(--gold); line-height: 1;
+}
+.promise-num small { display: block; font-size: 10px; letter-spacing: 0.3em; color: var(--ink-soft); margin-bottom: 4px; }
+.promise-title {
+  font-family: var(--serif); font-weight: 700; font-size: 17px;
+  color: var(--sage-deep); margin-bottom: 8px;
+}
+.promise-text { font-size: 13px; line-height: 1.9; color: var(--ink-soft); }
+
+.compare { background: var(--bg-alt); }
+.compare-table {
+  width: 100%; border-collapse: collapse; background: #fff;
+  border-radius: 4px; overflow: hidden;
+  font-size: 13px;
+}
+.compare-table th, .compare-table td {
+  padding: 16px 12px; text-align: center; border-bottom: 1px solid var(--border);
+}
+.compare-table th {
+  background: var(--sage-deep); color: #fff;
+  font-family: var(--serif); font-weight: 500; font-size: 13px;
+}
+.compare-table th.our { background: var(--gold); }
+.compare-table td.our { background: rgba(181, 148, 92, 0.08); font-weight: 700; color: var(--sage-deep); }
+.compare-table tr:last-child td { border-bottom: none; }
+.compare-table .axis { text-align: left; font-weight: 700; background: var(--bg); }
+
+.faq { background: #fff; }
+.faq-list { max-width: 800px; margin: 0 auto; }
+.faq-item {
+  border-bottom: 1px solid var(--border); padding: 22px 0;
+  cursor: pointer;
+}
+.faq-q {
+  font-family: var(--serif); font-weight: 700; font-size: 16px;
+  color: var(--sage-deep); padding-left: 36px; position: relative;
+}
+.faq-q::before {
+  content: "Q"; position: absolute; left: 0; top: -2px;
+  font-size: 20px; color: var(--gold);
+}
+.faq-a {
+  margin-top: 14px; padding-left: 36px; font-size: 13px; line-height: 1.9;
+  color: var(--ink-soft); display: none;
+}
+.faq-item.open .faq-a { display: block; }
+
+.doctor { background: var(--bg-alt); }
+.doctor-card {
+  background: #fff; padding: 50px; border-radius: 4px;
+  display: grid; grid-template-columns: 1fr 1.6fr; gap: 40px;
+  align-items: start; max-width: 920px; margin: 0 auto;
+}
+.doctor-photo {
+  background: linear-gradient(135deg, var(--sage), var(--sage-deep));
+  aspect-ratio: 3/4; border-radius: 4px;
+  display: flex; align-items: center; justify-content: center;
+  color: #fff; font-family: var(--serif); font-size: 13px;
+  letter-spacing: 0.2em; text-align: center;
+}
+.doctor-name {
+  font-family: var(--serif); font-weight: 700; font-size: 24px;
+  color: var(--ink); margin-bottom: 6px;
+}
+.doctor-name small { display: block; font-size: 12px; color: var(--ink-soft); margin-top: 4px; letter-spacing: 0.1em; }
+.doctor-role {
+  font-size: 12px; color: var(--gold); letter-spacing: 0.2em; margin-bottom: 20px;
+}
+.doctor-text { font-size: 13px; line-height: 1.9; color: var(--ink-soft); margin-bottom: 16px; }
+.doctor-creds {
+  background: var(--bg); padding: 20px; border-radius: 4px; margin-top: 20px;
+  font-size: 12px;
+}
+.doctor-creds-title { font-family: var(--serif); font-weight: 700; color: var(--sage-deep); margin-bottom: 10px; font-size: 13px; }
+.doctor-creds li { padding: 4px 0 4px 16px; position: relative; list-style: none; }
+.doctor-creds li::before { content: "・"; position: absolute; left: 0; color: var(--gold); }
+
+.access { background: #fff; }
+.access-card {
+  max-width: 820px; margin: 0 auto;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 32px;
+  background: var(--bg); padding: 40px; border-radius: 4px;
+}
+.access-info dt {
+  font-family: var(--serif); font-weight: 700; font-size: 12px;
+  color: var(--gold); margin-top: 16px; letter-spacing: 0.1em;
+}
+.access-info dt:first-child { margin-top: 0; }
+.access-info dd { font-size: 14px; margin-top: 4px; }
+.access-map {
+  background: linear-gradient(135deg, var(--bg-alt), var(--border));
+  border-radius: 4px; display: flex; align-items: center; justify-content: center;
+  color: var(--ink-soft); font-family: var(--serif); font-size: 13px;
+  min-height: 240px; overflow: hidden;
+}
+.access-map iframe { width: 100%; height: 100%; border: 0; }
+
+.footer {
+  background: var(--sage-deep); color: rgba(255,255,255,0.85);
+  padding: 50px 24px 30px; text-align: center;
+}
+.footer-logo {
+  font-family: var(--serif); font-weight: 700; font-size: 22px;
+  color: #fff; margin-bottom: 8px;
+}
+.footer-tag { font-size: 11px; letter-spacing: 0.3em; color: var(--gold); margin-bottom: 30px; }
+.footer-info { font-size: 12px; line-height: 2; }
+.footer-copy { margin-top: 30px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1); font-size: 11px; opacity: 0.6; }
+
+.float-cta {
+  position: fixed; bottom: 0; left: 0; right: 0;
+  background: rgba(50, 75, 65, 0.97); backdrop-filter: blur(10px);
+  display: none; padding: 12px; gap: 8px; z-index: 90;
+  box-shadow: 0 -4px 20px rgba(0,0,0,0.1);
+}
+.float-cta a {
+  flex: 1; padding: 12px; text-align: center; border-radius: 6px;
+  font-size: 13px; font-weight: 700; color: #fff;
+}
+.float-cta .float-line { background: var(--line); }
+.float-cta .float-tel { background: var(--gold); }
+
+@media (max-width: 768px) {
+  body { font-size: 14px; }
+  .header { top: 32px; }
+  .header-inner { padding: 12px 16px; }
+  .tel-mini { display: none; }
+  .hero { padding: 40px 16px 60px; }
+  .hero-stats { grid-template-columns: 1fr; gap: 12px; }
+  .stat { padding: 16px 12px; }
+  .section { padding: 50px 16px; }
+  .checklist { padding: 24px 20px; }
+  .doctor-card { grid-template-columns: 1fr; padding: 24px; gap: 20px; }
+  .access-card { grid-template-columns: 1fr; padding: 24px; }
+  .promise-item { grid-template-columns: 60px 1fr; padding: 20px; gap: 16px; }
+  .promise-num { font-size: 28px; }
+  .compare-table { font-size: 11px; }
+  .compare-table th, .compare-table td { padding: 10px 6px; }
+  .float-cta { display: flex; }
+  body { padding-bottom: 70px; }
+  .voice-card { padding: 24px; }
+  .empathy-symptoms { gap: 12px; }
+  .symptom-card { padding: 14px 18px; font-size: 13px; }
+  .cta-line, .cta-tel { min-width: unset; width: 100%; padding: 16px 24px; }
+}
+</style>
+</head>
+<body>
+
+<!-- DEMO BANNER (常時表示・実商談で削除) -->
+<div class="demo-banner">
+  ⚠ 提案デモページ <small>株式会社Aceの営業提案資料です／実際の予約はできません</small>
+</div>
+
+<!-- HEADER -->
+<header class="header">
+  <div class="header-inner">
+    <div class="logo">銀座メディック<small>GINZA MEDIQ</small></div>
+    <div class="header-cta">
+      <div class="tel-mini">DEMO<small>※ デモページ</small></div>
+      <a href="#demo" onclick="alert('提案デモのため予約機能は無効化されています');return false;" class="btn-line-mini">LINEで予約</a>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <span class="hero-tag">自律神経・パニック障害 専門整体院</span>
+    <h1 class="hero-title">
+      検査では「異常なし」、<br />
+      でも確かに苦しい <em>あなたの不調を、根本から</em>。
+    </h1>
+    <p class="hero-sub">
+      パニック障害・不安障害・自律神経失調症・更年期障害── <br class="pc-only" />
+      薬や心の問題ではなく、脳と自律神経のバランスから整える専門整体院です。
+    </p>
+    <div class="hero-stats">
+      <div class="stat"><span class="stat-num">30,000<small>件</small></span><div class="stat-label">以上の臨床実績</div></div>
+      <div class="stat"><span class="stat-num">98.6<small>%</small></span><div class="stat-label">が効果を実感</div></div>
+      <div class="stat"><span class="stat-num">20<small>年</small></span><div class="stat-label">の臨床経験</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="offer-banner">
+  <div class="offer-tag">期間限定 ／ LINE予約限定</div>
+  <div class="offer-title">初回カウンセリング<strong>（40分）無料</strong></div>
+  <div class="offer-deadline">院長・成川が24時間以内に必ずご返信いたします</div>
+</section>
+
+<section class="cta-block">
+  <div class="cta-inner">
+    <a href="#demo" onclick="alert('提案デモのため予約機能は無効化されています');return false;" class="cta-line">いますぐLINEで予約する</a>
+    <a href="#demo" onclick="alert('提案デモのため予約機能は無効化されています');return false;" class="cta-tel">📞 デモページ</a>
+    <p class="cta-note">完全予約制 ／ 受付 9:00-20:00<br />
+      <span class="refund-badge">初回 全額返金保証</span>
+    </p>
+  </div>
+</section>
+
+<section class="section bg-checklist">
+  <div class="section-inner">
+    <p class="section-tag">CHECK LIST</p>
+    <h2 class="section-title">こんな <em>症状や不安</em> はありませんか？</h2>
+    <ul class="checklist">
+      <li>「自分の体なのにコントロールできない」感覚がある</li>
+      <li>理由もなく不安や恐怖が襲い、「このままおかしくなるのでは」と感じる</li>
+      <li>人混み・電車・美容室など「すぐ逃げられない場所」が怖い</li>
+      <li>急に吐き気や気持ち悪さで、予定をキャンセルすることが増えた</li>
+      <li>外出前から「また具合悪くなるかも」と常に考えてしまう</li>
+      <li>急な動悸や息苦しさで「このまま倒れるのでは」と不安になる</li>
+      <li>食欲はあるのに胃が受け付けず、食事が怖くなってきた</li>
+      <li>体温調整がうまくいかず、急に暑くなったり寒くなったりする</li>
+      <li>朝から疲れていて「今日は大丈夫かな…」と一日が不安から始まる</li>
+      <li>突然「フワッ」としためまいが、一日中引きずってしまう</li>
+    </ul>
+  </div>
+</section>
+
+<section class="section empathy">
+  <div class="section-inner">
+    <p class="section-tag">YOUR REAL CAUSE</p>
+    <div class="empathy-symptoms">
+      <div class="symptom-card">外に出るのが怖い</div>
+      <div class="symptom-card">ひとりだと不安が強くなる</div>
+      <div class="symptom-card">「また発作が来るかも」が頭から離れない</div>
+    </div>
+    <p class="empathy-message">
+      その「つらい」は、<strong>気のせいでも、性格の問題でもありません</strong>。<br />
+      脳と自律神経の<em style="color:var(--sage-deep);font-style:normal;border-bottom:2px solid var(--gold);">「誤学習」</em>が原因です。
+    </p>
+    <p style="font-size:14px;color:var(--ink-soft);max-width:640px;margin:0 auto;">
+      薬で一時的に抑えても再発するのは、脳幹（自律神経の中枢）の過敏状態が残っているから。<br />
+      問題は「心」ではなく <strong style="color:var(--sage-deep);">身体のコントロールシステムの乱れ</strong> です。
+    </p>
+    <div class="empathy-cause">
+      <div class="empathy-cause-title">脳の疲労（オーバーヒート）が引き起こすもの</div>
+      <ul>
+        <li>脳幹の過敏状態 → 些細な刺激で動悸・発作が起きやすくなる</li>
+        <li>呼吸・循環・内臓のコントロール異常</li>
+        <li>迷走神経の機能低下 → 慢性的な不安と緊張</li>
+        <li>首と頭の連動不全 → めまい・ふらつき</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="section reasons">
+  <div class="section-inner">
+    <p class="section-tag">OUR APPROACH</p>
+    <h2 class="section-title">3万人を <em>根本改善</em> できた5つの理由</h2>
+    <div class="reason-grid">
+      <div class="reason-card" style="border-top:3px dashed var(--gold);">
+        <div class="reason-num">REASON 01</div>
+        <h3 class="reason-title" style="color:var(--ink-soft);">［ 強み 01 のタイトル ］</h3>
+        <p class="reason-text">院長の強み・差別化ポイントをヒアリング後に反映します。「他院では受けられない理由」を訴求力高く整理してご提示します。</p>
+      </div>
+      <div class="reason-card" style="border-top:3px dashed var(--gold);">
+        <div class="reason-num">REASON 02</div>
+        <h3 class="reason-title" style="color:var(--ink-soft);">［ 強み 02 のタイトル ］</h3>
+        <p class="reason-text">使用機器・検査方法・施術プロセスなど、専門性を可視化する要素を整理して掲載します。</p>
+      </div>
+      <div class="reason-card" style="border-top:3px dashed var(--gold);">
+        <div class="reason-num">REASON 03</div>
+        <h3 class="reason-title" style="color:var(--ink-soft);">［ 強み 03 のタイトル ］</h3>
+        <p class="reason-text">技術的な強み・治療メソッドの独自性を、専門用語を補足しながら一般患者にも伝わる文章で構成いたします。</p>
+      </div>
+      <div class="reason-card" style="border-top:3px dashed var(--gold);">
+        <div class="reason-num">REASON 04</div>
+        <h3 class="reason-title" style="color:var(--ink-soft);">［ 強み 04 のタイトル ］</h3>
+        <p class="reason-text">運営体制・スタッフ構成・通いやすさなど、患者様視点で安心材料となる情報を整理して掲載します。</p>
+      </div>
+      <div class="reason-card" style="border-top:3px dashed var(--gold);">
+        <div class="reason-num">REASON 05</div>
+        <h3 class="reason-title" style="color:var(--ink-soft);">［ 強み 05 のタイトル ］</h3>
+        <p class="reason-text">施術環境・プライバシー配慮・衛生管理など、安心して通える環境としての訴求要素を構成します。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section voices">
+  <div class="section-inner">
+    <p class="section-tag">CUSTOMER VOICE</p>
+    <h2 class="section-title">実際に <em>改善された</em> 患者様の声</h2>
+
+    <div class="voice-card" style="background:#fff;border-left:3px dashed var(--gold);">
+      <div class="voice-quote" style="color:var(--ink-soft);">［ 患者様の声 01 ］</div>
+      <div class="voice-meta">※実際の体験談がここに掲載されます</div>
+      <div class="voice-qa">
+        <p class="voice-q">これまでの経緯</p>
+        <p class="voice-a" style="color:var(--ink-soft);">院長へのヒアリング後、実際にご来院された患者様のお声を反映いたします。Q&amp;A形式で「来院前の状態」「施術後の変化」「生活への影響」を訴求力高く構成します。</p>
+        <p class="voice-q">施術後の変化</p>
+        <p class="voice-a" style="color:var(--ink-soft);">具体的な改善エピソード・期間・気持ちの変化などを掲載予定。掲載許諾済みの患者様3〜5名分を順次更新できる構成です。</p>
+      </div>
+    </div>
+
+    <div class="voice-card" style="background:#fff;border-left:3px dashed var(--gold);">
+      <div class="voice-quote" style="color:var(--ink-soft);">［ 患者様の声 02 ］</div>
+      <div class="voice-meta">※実際の体験談がここに掲載されます</div>
+      <div class="voice-qa">
+        <p class="voice-q">これまでの経緯</p>
+        <p class="voice-a" style="color:var(--ink-soft);">対象症状ごと（パニック障害／自律神経失調症／更年期障害）にバランス良く配置することで、訪問者の自分ごと化を最大化します。</p>
+        <p class="voice-q">施術後の変化</p>
+        <p class="voice-a" style="color:var(--ink-soft);">写真の有無・年代・性別・職業など、訪問ターゲット層に近い属性の方を優先掲載するのが鉄則です。</p>
+      </div>
+    </div>
+
+    <div class="voice-card" style="background:#fff;border-left:3px dashed var(--gold);">
+      <div class="voice-quote" style="color:var(--ink-soft);">［ 患者様の声 03 ］</div>
+      <div class="voice-meta">※実際の体験談がここに掲載されます</div>
+      <div class="voice-qa">
+        <p class="voice-q">これまでの経緯</p>
+        <p class="voice-a" style="color:var(--ink-soft);">既存のお客様アンケートやGoogle口コミから抽出する形でも対応可能です。文字数・トーンはAce側で整え、最終的に院長確認の上で掲載いたします。</p>
+        <p class="voice-q">施術後の変化</p>
+        <p class="voice-a" style="color:var(--ink-soft);">スクロール離脱率の高いセクションのため、ファーストビューに最も訴求力のある声を配置します。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-block">
+  <div class="cta-inner">
+    <p style="font-family:var(--serif);font-size:18px;color:var(--sage-deep);margin-bottom:24px;font-weight:700;">
+      ＼ 1日3名様限定・LINE予約限定 ／<br />初回カウンセリング無料キャンペーン
+    </p>
+    <a href="#demo" onclick="alert('提案デモのため予約機能は無効化されています');return false;" class="cta-line">いますぐLINEで予約する</a>
+    <a href="#demo" onclick="alert('提案デモのため予約機能は無効化されています');return false;" class="cta-tel">📞 デモページ</a>
+    <p class="cta-note">＊効果が感じられなかった場合は、初回施術費用を全額返金いたします<br />（初回施術費用 17,800円 + 初診料 3,300円）</p>
+  </div>
+</section>
+
+<section class="section promises">
+  <div class="section-inner">
+    <p class="section-tag">OUR PROMISE</p>
+    <h2 class="section-title">当院から <em>5つのお約束</em></h2>
+    <div class="promise-list">
+      <div class="promise-item">
+        <div class="promise-num"><small>PROMISE</small>01</div>
+        <div>
+          <h3 class="promise-title" style="color:var(--ink-soft);">［ お約束 01 のタイトル ］</h3>
+          <p class="promise-text">院長のスタンス・経営理念をヒアリング後、「患者様への誓い」として再構成します。文末は意志を感じさせる断定調で統一いたします。</p>
+        </div>
+      </div>
+      <div class="promise-item">
+        <div class="promise-num"><small>PROMISE</small>02</div>
+        <div>
+          <h3 class="promise-title" style="color:var(--ink-soft);">［ お約束 02 のタイトル ］</h3>
+          <p class="promise-text">「他院ではしてくれないこと」「不安解消への誓い」など、競合差別化につながる約束を最大5つまで整理いたします。</p>
+        </div>
+      </div>
+      <div class="promise-item">
+        <div class="promise-num"><small>PROMISE</small>03</div>
+        <div>
+          <h3 class="promise-title" style="color:var(--ink-soft);">［ お約束 03 のタイトル ］</h3>
+          <p class="promise-text">施術スピード・改善期間など、患者様の関心事への回答を約束として明文化することで、初回問い合わせへの心理ハードルを下げます。</p>
+        </div>
+      </div>
+      <div class="promise-item">
+        <div class="promise-num"><small>PROMISE</small>04</div>
+        <div>
+          <h3 class="promise-title" style="color:var(--ink-soft);">［ お約束 04 のタイトル ］</h3>
+          <p class="promise-text">担当体制・継続的なサポートなど、長期通院への安心感を醸成する要素を約束として打ち出します。</p>
+        </div>
+      </div>
+      <div class="promise-item">
+        <div class="promise-num"><small>PROMISE</small>05</div>
+        <div>
+          <h3 class="promise-title" style="color:var(--ink-soft);">［ お約束 05 のタイトル ］</h3>
+          <p class="promise-text">環境面・プライバシー配慮・予約管理など、心地よく通える環境への約束を整理いたします。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section compare">
+  <div class="section-inner">
+    <p class="section-tag">COMPARISON</p>
+    <h2 class="section-title">他院との <em>違い</em> をひと目で</h2>
+    <table class="compare-table">
+      <thead>
+        <tr>
+          <th></th>
+          <th class="our">当院</th>
+          <th>一般的な整体院</th>
+          <th>心療内科</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="axis">アプローチ対象</td>
+          <td class="our">脳・自律神経</td>
+          <td>筋肉・骨格</td>
+          <td>投薬</td>
+        </tr>
+        <tr>
+          <td class="axis">原因の特定</td>
+          <td class="our">独自検査で可視化</td>
+          <td>触診中心</td>
+          <td>問診中心</td>
+        </tr>
+        <tr>
+          <td class="axis">担当者</td>
+          <td class="our">院長専属</td>
+          <td>日替わり多い</td>
+          <td>医師</td>
+        </tr>
+        <tr>
+          <td class="axis">施術環境</td>
+          <td class="our">完全個室・予約制</td>
+          <td>共有スペース</td>
+          <td>診察室</td>
+        </tr>
+        <tr>
+          <td class="axis">返金保証</td>
+          <td class="our">あり（初回）</td>
+          <td>なし</td>
+          <td>なし</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="section faq">
+  <div class="section-inner">
+    <p class="section-tag">FAQ</p>
+    <h2 class="section-title">よくある <em>ご質問</em></h2>
+    <div class="faq-list">
+      <div class="faq-item open">
+        <div class="faq-q">遠方からの通院は可能ですか？</div>
+        <div class="faq-a">［ 回答内容がここに入ります ］院長へのヒアリング後、実際の対応方針を反映した回答を掲載いたします。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">どのくらいの期間で改善しますか？</div>
+        <div class="faq-a">［ 回答内容がここに入ります ］過去の治療実績に基づく目安回数を、誤解を生まない範囲で具体的にご提示します。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">病院との並行通院は可能ですか？</div>
+        <div class="faq-a">［ 回答内容がここに入ります ］医療機関との連携方針について、院長のスタンスを反映した文章で構成いたします。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">診察時間はどのくらいですか？</div>
+        <div class="faq-a">［ 回答内容がここに入ります ］初診・再診それぞれの所要時間を明記し、来院前の不安を解消します。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">時期や季節で症状が悪化しますが治療できますか？</div>
+        <div class="faq-a">［ 回答内容がここに入ります ］対象症状の特性を踏まえた回答を、専門用語の補足とともに掲載します。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">生活習慣のアドバイスはもらえますか？</div>
+        <div class="faq-a">［ 回答内容がここに入ります ］アフターフォロー体制について、院長の方針を反映した文章で構成します。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">コースはどう選べばいいですか？</div>
+        <div class="faq-a">［ 回答内容がここに入ります ］料金体系と選び方の指針について、訪問者の不安を取り除く形で整理いたします。</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section doctor">
+  <div class="section-inner">
+    <p class="section-tag">DOCTOR PROFILE</p>
+    <h2 class="section-title">院長 <em>ごあいさつ</em></h2>
+    <div class="doctor-card">
+      <div class="doctor-photo">院長写真<br />PORTRAIT</div>
+      <div>
+        <h3 class="doctor-name">成川 和寿<small>NARIKAWA Kazuhisa</small></h3>
+        <div class="doctor-role">院長 / 柔道整復師</div>
+        <p class="doctor-text" style="color:var(--ink-soft);">［ 院長メッセージがここに入ります ］</p>
+        <p class="doctor-text" style="color:var(--ink-soft);font-size:12px;line-height:1.8;">院長へのヒアリング後、患者様への思い・治療方針・印象的なエピソードなどを300〜500字程度で構成いたします。「どんな患者様に来てほしいか」「何を大切にしているか」を明確に打ち出すことで、お問い合わせの質を引き上げます。</p>
+        <p class="doctor-text" style="color:var(--ink-soft);font-size:12px;line-height:1.8;">読了率の高いセクションのため、共感性と専門性のバランスを最重視して文章をAce側で整え、最終的に院長確認の上で公開いたします。</p>
+        <div class="doctor-creds">
+          <div class="doctor-creds-title">資格・経歴</div>
+          <ul>
+            <li>厚生労働大臣認定 柔道整復師（第690393号）</li>
+            <li>柔道整復専科教員資格（第1958号）</li>
+            <li>新宿鍼灸柔整専門学校 柔道整復学科 卒業</li>
+            <li>臨床経験 約20年・施術実績 のべ3万人以上</li>
+            <li>都内5院展開接骨院グループ 本院院長を歴任</li>
+            <li>米国式アクティベーター・メソッド応用</li>
+            <li>2024年9月 東銀座に拠点を移転</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section access">
+  <div class="section-inner">
+    <p class="section-tag">ACCESS & CONTACT</p>
+    <h2 class="section-title">ご予約 ／ <em>アクセス</em></h2>
+    <div class="access-card">
+      <dl class="access-info">
+        <dt>院名</dt><dd>銀座メディック</dd>
+        <dt>住所</dt><dd>東京都中央区銀座3丁目14-18<br />JOKARI GINZAビル 4階</dd>
+        <dt>電話</dt><dd style="color:var(--terracotta);font-weight:700;">DEMO （予約機能無効）</dd>
+        <dt>受付時間</dt><dd>9:00 - 20:00（完全予約制）</dd>
+        <dt>アクセス</dt><dd>東銀座駅 徒歩3分／銀座駅 徒歩5分</dd>
+        <dt>対象疾患</dt><dd>パニック障害・不安障害<br />自律神経失調症・更年期障害</dd>
+      </dl>
+      <div class="access-map">
+        <iframe src="https://www.google.com/maps?q=東京都中央区銀座3-14-18&output=embed" loading="lazy"></iframe>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:40px;">
+      <a href="#demo" onclick="alert('提案デモのため予約機能は無効化されています');return false;" class="cta-line">LINEで今すぐ予約する</a>
+      <a href="#demo" onclick="alert('提案デモのため予約機能は無効化されています');return false;" class="cta-tel">📞 デモページ</a>
+      <p class="cta-note" style="margin-top:20px;"><span class="refund-badge">初回 全額返金保証</span></p>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-logo">銀座メディック</div>
+  <div class="footer-tag">GINZA MEDIQ</div>
+  <div class="footer-info">
+    自律神経・パニック障害専門整体院<br />
+    東京都中央区銀座3丁目14-18 JOKARI GINZAビル 4階<br />
+    完全予約制 ／ 全額返金保証つき<br /><br />
+    <span style="color:var(--gold);font-size:11px;letter-spacing:0.2em;">─ DEMO PAGE ─<br />株式会社Ace 営業提案資料</span>
+  </div>
+  <div class="footer-copy">© 2026 株式会社Ace（提案デモページ）</div>
+</footer>
+
+<div class="float-cta">
+  <a href="#demo" onclick="alert('提案デモのため予約機能は無効化されています');return false;" class="float-line">LINE予約</a>
+  <a href="#demo" onclick="alert('提案デモのため予約機能は無効化されています');return false;" class="float-tel">📞 電話</a>
+</div>
+
+<script>
+document.querySelectorAll('.faq-item').forEach(item => {
+  item.addEventListener('click', () => {
+    item.classList.toggle('open');
+  });
+});
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.style.opacity = '1';
+      entry.target.style.transform = 'translateY(0)';
+    }
+  });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.section').forEach(section => {
+  section.style.opacity = '0';
+  section.style.transform = 'translateY(20px)';
+  section.style.transition = 'opacity .8s ease-out, transform .8s ease-out';
+  observer.observe(section);
+});
+</script>
+
+</body>
+</html>
